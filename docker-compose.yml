@@ -1,0 +1,14 @@
+services:
+  network_manager:
+    container_name: network_manager
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "5050:5000"
+    networks:
+      - internal
+
+networks:
+  internal:
+    external: true
